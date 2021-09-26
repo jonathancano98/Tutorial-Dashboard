@@ -1,0 +1,10 @@
+<button (click)="Mostrar()">Mostrar persona</button>
+
+<div *ngIf="persona"> <!--esto significa que persona sea disinto de null-->
+
+<h2>Datos de la persona</h2>
+<div>><span>Nombre: </span>{{persona.nombre}}</div>
+<div>><span>Contraseña: </span>{{persona.contra}}</div>
+<div>><span>Rol: </span>{{persona.rol}}</div>
+<div>><span>Puntos: </span>{{persona.puntos}}</div>
+</div>
