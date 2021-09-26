@@ -1,41 +1,59 @@
-<button (click)="Mostrar()">Mostar lista</button>
-<button (click)="Ordenarporpuntos()">Ordenar por puntos</button>
 
 
-<div>
-  <h2>LISTA ALUMNOS</h2>
-  <ul *ngFor= "let persona of lista">
-    <li *ngIf="persona.rol === 'Alumno' ">
-      Nombre: {{persona.nombre}} - Puntos: {{persona.puntuacion}}
-      <button (click)="Incrementar(persona.nombre)">Incrementar</button>
-      <button (click)="Eliminar(persona.nombre)">Eliminar</button>
-
-    </li>
-  </ul>
   
+  <h1 class="text-success">LISTA ALUMNOS</h1> 
+  <div class="left">
+    <table class="table">  
+  <!-- Esto crea linea azul -->
+    <thead> 
+    <!-- Pone la linea abajo -->
+      <tr class="font-weight-bold text-primary">
+      <!-- Pone nombre y Puntos en azul  -->
+        <td><h2>Nombre</h2></td>
+        <td><h2>Puntos</h2></td>
+        <!-- Hay que añadir el th para seguir la linea -->
+      </tr>
+    </thead>
+    <tbody>
+    <tr class="info" *ngFor= "let persona of lista">
+
+      <td><h1>{{persona.nombre}}</h1></td>
+      <td><span class="badge">{{persona.puntuacion}}</span></td>
+      <td><button class="btn btn-success" (click)="Incrementar(persona.nombre)"><span class="glyphicon glyphicon-plus"></span></button></td>
+      <td><button class="btn btn-danger" (click)="Eliminar(persona.nombre)"><span class="glyphicon glyphicon-trash"></span></button></td>
+    </tr>
+    </tbody>  
+    </table>
+    <button class="btn btn-primary" (click)="Mostrar()">Mostar lista</button>
+    <button class="btn btn-secondary" (click)="Ordenarporpuntos()">Ordenar por puntos</button>
+    
+    
 </div>
 
-<h2>Introducir nuevo Alumno</h2>
-<form (ngSubmit)="Pon();">
- <div>
-   <label>Nombre:</label>
-   <input type="text" name="nombre" placeholder="escribe el nombre" required [(ngModel)]="nombre">
- </div>
- <div>
-   <label>Password:</label>
-   <input type="text" name="pass" placeholder="escribe el password" required [(ngModel)]="pass">
- </div>
- <div>
-   <label>Rol:</label>
-   <select  name="rol" required [(ngModel)]="rol">
-     <option value="Alumno">Alumno</option>
-     <option value="Profesor">Profesor</option>
-   </select>
- </div>
- <div>
-   <label>Puntos iniciales: </label>
-   <input type="number" name="puntos" placeholder="puntos iniciales" required [(ngModel)]="puntos">
 
- </div>
- <button> Crear nuevo alumno </button>
-</form>
+  <!-- <ul *ngFor= "let persona of lista">
+    <li *ngIf="persona.rol === 'Alumno' ">
+      Nombre: {{persona.nombre}} - Puntos: {{persona.puntuacion}}
+      <button class="btn btn-success" (click)="Incrementar(persona.nombre)"><span class="glyphicon glyphicon-plus"></span></button>
+      <button class="btn btn-danger" (click)="Eliminar(persona.nombre)"><span class="glyphicon glyphicon-trash"></span></button>
+
+    </li>
+  </ul> -->
+
+<div class="right">
+<h3 class="text-success">Nueva Persona </h3>
+
+  <form class ="form-inline" (ngSubmit)="Pon();">
+    
+    <input type="text" name="nombre" placeholder="escribe el nombre" required [(ngModel)]="nombre">
+    <input type="text" name="pass" placeholder="escribe el password" required [(ngModel)]="pass">
+    <select  name="rol" required [(ngModel)]="rol">
+        <option value="Alumno">Alumno</option>
+        <option value="Profesor">Profesor</option>
+    </select>
+    <input type="number" name="puntos" placeholder="puntos iniciales" required [(ngModel)]="puntos">
+    <button> Crear nuevo alumno </button>
+ 
+  </form>
+
+</div>

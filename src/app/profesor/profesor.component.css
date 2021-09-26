@@ -1,0 +1,13 @@
+ /* h1 {text-align: right;} */
+.left{
+    float: left;
+    width: 800px;
+    height: 300px;   
+}
+.right{
+    float: right;
+    width: 350px;   
+}
+.center{
+    display:inline-block
+}
