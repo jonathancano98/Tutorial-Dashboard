@@ -1,5 +1,5 @@
-<button (click)="Mostrar()">Mostar lista</button>
-<button (click)="Ordenarporpuntos()">Ordenar por puntos</button>
+
+<!-- <span class="material-icons green">face</span> -->
 
 
 <div>
@@ -7,13 +7,15 @@
   <ul *ngFor= "let persona of lista">
     <li *ngIf="persona.rol === 'Alumno' ">
       Nombre: {{persona.nombre}} - Puntos: {{persona.puntuacion}}
-      <button (click)="Incrementar(persona.nombre)">Incrementar</button>
-      <button (click)="Eliminar(persona.nombre)">Eliminar</button>
-
+      <button (click)="Incrementar(persona.nombre)"><span class="material-icons green">add </span></button>
+      <button (click)="Eliminar(persona.nombre)"><span class="material-icons red">delete</span></button>
+      <button (click)="Ver(persona.nombre)"><span class="material-icons">remove_red_eye</span></button>
     </li>
   </ul>
   
 </div>
+<button (click)="Mostrar()">Mostar lista</button>
+<button (click)="Ordenarporpuntos()">Ordenar por puntos</button>
 
 <h2>Introducir nuevo Alumno</h2>
 <form (ngSubmit)="Pon();">
@@ -37,5 +39,15 @@
    <input type="number" name="puntos" placeholder="puntos iniciales" required [(ngModel)]="puntos">
 
  </div>
- <button> Crear nuevo alumno </button>
 </form>
+ <button (click)="Goback()" >Atras</button>
+
+<!-- <h3>Raised Buttons</h3>
+<div class="example-button-row">
+  <button mat-raised-button>Basic</button>
+  <button mat-raised-button color="primary">Primary</button>
+  <button mat-raised-button color="accent">Accent</button>
+  <button mat-raised-button color="warn">Warn</button>
+  <button mat-raised-button disabled>Disabled</button>
+  <a mat-raised-button routerLink=".">Link</a>
+</div> -->

@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { ListaService } from '../lista.service';
 import { Persona } from '../Persona';
+import { Location } from '@angular/common';
 
 @Component({
   selector: 'app-profesor',
@@ -18,7 +19,8 @@ export class ProfesorComponent implements OnInit {
   puntos: number;
   rol: string;
 
-  constructor(private serviciolista: ListaService) { }
+  constructor(private serviciolista: ListaService,
+              private location: Location) { }
 
   ngOnInit() {}
 
@@ -43,6 +45,18 @@ export class ProfesorComponent implements OnInit {
 
   Eliminar(nombreeliminar: string){
     this.lista=this.serviciolista.Eliminar(nombreeliminar);
+  }
+
+  Ver(nombreaver: string)
+  {
+    let persona: Persona
+    persona = this.serviciolista.Ver(nombreaver);
+    window.location.href = '/ver/' + persona.nombre;
+    console.log(persona.nombre,persona.contra,persona.puntuacion);
+  }
+
+  Goback(){
+    this.location.back();
   }
 
   ///////////////// Funciones

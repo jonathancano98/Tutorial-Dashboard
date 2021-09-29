@@ -1,0 +1,23 @@
+<table>
+  <thead>
+    <tr>
+      <th>Nombre</th>
+      <th>Pass</th>
+      <th>Puntos</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <th>{{alumno.nombre}}</th>
+      <td>{{alumno.contra}}</td>
+      <td>{{alumno.puntuacion}}</td>
+    </tr>
+  </tbody>
+</table>
+
+<form (ngSubmit)="Cambia();">
+  <label>Nueva contraseña:</label>
+  <input type="text" name="pass" placeholder="Nueva contraseña" required [(ngModel)]="nuevopass">
+  <button>Cambiar</button>
+</form>
+<button (click)="Goback()" >Atras</button>
