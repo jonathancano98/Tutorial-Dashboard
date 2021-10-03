@@ -7,7 +7,7 @@
   <ul *ngFor= "let persona of lista">
     <li *ngIf="persona.rol === 'Alumno' ">
       Nombre: {{persona.nombre}} - Puntos: {{persona.puntuacion}}
-      <button (click)="Incrementar(persona.nombre)"><span class="material-icons green">add </span></button>
+      <button (click)="Incrementar(persona)"><span class="material-icons green">add </span></button>
       <button (click)="Eliminar(persona.nombre)"><span class="material-icons red">delete</span></button>
       <button (click)="Ver(persona.nombre)"><span class="material-icons">remove_red_eye</span></button>
     </li>
@@ -18,14 +18,14 @@
 <button (click)="Ordenarporpuntos()">Ordenar por puntos</button>
 
 <h2>Introducir nuevo Alumno</h2>
-<form (ngSubmit)="Pon();">
+<form (ngSubmit)="Anadirpersona();">
  <div>
    <label>Nombre:</label>
    <input type="text" name="nombre" placeholder="escribe el nombre" required [(ngModel)]="nombre">
  </div>
  <div>
    <label>Password:</label>
-   <input type="text" name="pass" placeholder="escribe el password" required [(ngModel)]="pass">
+   <input type="text" name="pass" placeholder="escribe el password" required [(ngModel)]="contra">
  </div>
  <div>
    <label>Rol:</label>
@@ -36,9 +36,10 @@
  </div>
  <div>
    <label>Puntos iniciales: </label>
-   <input type="number" name="puntos" placeholder="puntos iniciales" required [(ngModel)]="puntos">
+   <input type="number" name="puntos" placeholder="puntos iniciales" required [(ngModel)]="puntuacion">
 
  </div>
+ <button>Pon</button>
 </form>
  <button (click)="Goback()" >Atras</button>
 

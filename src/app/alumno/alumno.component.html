@@ -1,4 +1,4 @@
-<table>
+<table *ngIf="alumno">
   <thead>
     <tr>
       <th>Nombre</th>
@@ -15,7 +15,7 @@
   </tbody>
 </table>
 
-<form (ngSubmit)="Cambia();">
+<form (ngSubmit)="Cambia(alumno);">
   <label>Nueva contraseña:</label>
   <input type="text" name="pass" placeholder="Nueva contraseña" required [(ngModel)]="nuevopass">
   <button>Cambiar</button>

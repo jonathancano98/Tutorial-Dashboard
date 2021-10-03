@@ -13,11 +13,11 @@ export class ListaService {
   // El constructor te crea una Lista con personas ya dentro
   constructor()
    {
-    this.lista[0] = new Persona('Jonathan', 'JJJ', 'Profesor',6);
-    this.lista[1] = new Persona('Pedro', 'PPP', 'Alumno',8);
-    this.lista[2] = new Persona('Antonio', 'AAA', 'Profesor',2);
-    this.lista[3] = new Persona('Laura', 'LLL', 'Alumno',9);
-    this.lista[4] = new Persona('Sofia', 'SSS', 'Profesor',1);
+    // this.lista[0] = new Persona('Jonathan', 'JJJ', 'Profesor',6);
+    // this.lista[1] = new Persona('Pedro', 'PPP', 'Alumno',8);
+    // this.lista[2] = new Persona('Antonio', 'AAA', 'Profesor',2);
+    // this.lista[3] = new Persona('Laura', 'LLL', 'Alumno',9);
+    // this.lista[4] = new Persona('Sofia', 'SSS', 'Profesor',1);
     
    }
 

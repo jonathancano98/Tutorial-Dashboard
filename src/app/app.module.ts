@@ -14,6 +14,9 @@ import { LoginComponent } from './login/login.component';
 import { AlumnoComponent } from './alumno/alumno.component';
 import { VerComponent } from './ver/ver.component';
 
+import { HttpModule } from '@angular/http';
+import { HttpClientModule } from '@angular/common/http';
+
 @NgModule({
   declarations: [
     AppComponent,
@@ -29,6 +32,8 @@ import { VerComponent } from './ver/ver.component';
     AppRoutingModule,
     FormsModule,
     BrowserAnimationsModule,
+    HttpModule,
+    HttpClientModule
     // MatButtonModule
   ],
   providers: [],
